@@ -1,0 +1,4 @@
+{
+	"port": 8080,
+	"some.domain.tld": ["https://example.com", "example.com"]
+}
