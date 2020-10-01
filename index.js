@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 		strictSSL: false
 	});
 
-	r.on('response', msg  res.status(msg.statusCode));
+	r.on('response', msg => res.status(msg.statusCode));
 	r.on('data', dat => res.write(dat))
 	r.on('end', () => res.end());
 
