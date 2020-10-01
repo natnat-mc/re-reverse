@@ -16,11 +16,9 @@ app.use((req, res, next) => {
 		method,
 		gzip: true,
 		strictSSL: false
-	}, (err, msg) => {
-		if(err) return res.status(500).end(err+'');
-		res.status(msg.status);
 	});
 
+	r.on('response', msg  res.status(msg.statusCode));
 	r.on('data', dat => res.write(dat))
 	r.on('end', () => res.end());
 
